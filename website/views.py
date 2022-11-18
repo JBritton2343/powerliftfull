@@ -20,3 +20,7 @@ def home():
 def home():
     return render_template("/")
 
+@views.route('/cart')
+def cart():
+    return render_template("cart.html")
+
