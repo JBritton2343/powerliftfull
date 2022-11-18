@@ -23,6 +23,26 @@
                 </div>
             </div>
         </nav>
+        {% with messages=get_flashed_messages(with_categories=true) %}
+        {%if messages%}
+        {%for category, message in messages%}
+        {%if category == "error"%}
+        <div class="alert alert-danger alert-dismissable fade show">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {%else%}
+        <div class="alert alert-success alert-dismissable fade show">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {%endfor}
+        {%endif%}
+        {%endwith%}
         <div class="container">{%block logo%}{%endblock}</div>
     <script 
         src="https://kit.fontawesome.com/2498b0b473.js" 
