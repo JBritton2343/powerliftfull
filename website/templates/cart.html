@@ -1,2 +1,13 @@
 {%extends "base.html"%}
 {%block title%}Cart{%endblock%}
+<h2 align="Center">Order</h2>
+<ul class="list-group list-group-flush" id="Products">
+    {% for product in product_name.Products  %}
+    <li class="list-group-item">{{% Products.data %}}</li>
+    {% endfor %}
+    <br/>
+<div align="Center">
+    <button type="submit" class="btn btn-primary">Submit Order</button>
+</div> 
+
+</ul>
